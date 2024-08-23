@@ -1,0 +1,140 @@
+# Ignorar todos los __pycache__ en cualquier subdirectorio
+**/__pycache__/
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Pyre type checker
+.pyre/
+
+# Mypy type checker
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pytest
+.pytest_cache/
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+
+# Django stuff:
+*.log
+*.pot
+*.pyc
+*.pyo
+*.pyd
+*.sqlite3
+db.sqlite3
+.DS_Store
+
+# If you are using PostgreSQL:
+*.pgdata
+
+# Celery stuff
+celerybeat-schedule
+celerybeat.pid
+
+# Translations
+*.mo
+*.pot
+
+# Static and media files
+/static/
+staticfiles/
+media/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# PyCharm
+.idea/
+
+# VS Code
+.vscode/
+
+# Local .env files
+.env.local
+.env.production
+.env.staging
+.env.*
+
+# MacOS specific files
+.DS_Store
+
+# Windows specific files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Ignore virtualenvs in the project directory
+venv/
+ENV/
+
+# Ignore migrations
+**/migrations/**
+
+# But don't ignore the __init__.py file
+!**/migrations/__init__.py
+
+# Ignore Pylint files
+pylint.json
+
+# Ignore the .coverage file
+.coverage
+
+# Ignore the .venv file for Poetry
+.venv
+
+# Ignore pytest cache
+.pytest_cache/
+
+# Ignore database files
+*.sqlite3
