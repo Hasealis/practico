@@ -10,6 +10,12 @@ class TestApiView(APIView):
     def test_func(request):
         result = sql_exec_function('core_func_do_nothing', request)
         return result.to_response()
+
+    @api_view(('GET',))
+    def test_func_two(request):
+        print('hello world.')
+        result = sql_exec_procedure('core_proc_do_nothing', request)
+        return result.to_response()
     
     @api_view(('GET',))
     def test_proc(request):

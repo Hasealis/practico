@@ -1,0 +1,108 @@
+
+
+COMO HACER MIGRACIONES DE MODEL (CHANGO) -> BASE DATOS (POSTGRE)
+    1 LA APP (CARPETA EJ CORE) debe tener un archivo apps.py con su configuracion igual que el de core
+    2 el archivo settings.py de main_system  debe tener dentro de la variable INSTALLED_APPS el name de la app de apps.py
+    3 DEFINIR MODELO EN CARPETA MODELS cada tabla dentro de su propio archivo .py
+    4 IMPORTAR MODELO A ARCHIVO __init__.py (el que está dentro de la carpeta models)
+    5 se ejecuta el comando -> python manage.py makemigrations
+        -- este prepara los scripts con base a los modelos y sus cambios
+    6 se ejecuta el comando -> python manage.py migrate
+        --este ejecuta los scripts y genera los cambios a la bd
+
+
+
+
+host 
+
+
+198.165.10.256//
+
+//endpoint
+
+practico-erp.com.co//erp_crm_back/consulta_usuarios
+
+practico-erp.com.co//erp_crm
+
+stone/stoneweb
+
+stone/stoneservices
+
+localhost//
+
+que son los metodos http
+
+query string del uri
+
+vista define el endpoint
+
+logica -> funciones python
+puede:
+    *consumir otros api
+    *hacer llamados a la bd ejecutar queries
+        como:
+            preparar scripts
+
+
+def consultar_paises():
+    #consulta bd y retorna un objeto
+    listado_de_paises = ('primer_valor',4510)
+    primer_valor = listado_de_paises[0]
+    data_json = {
+        "valor1": primer_valor
+    }
+    valor_recuperado = data_json['valor1']
+    return valor_recuperado
+
+
+tuplas y arrays (en django se llaman list)
+
+
+string str "daskjadnasljhads" -> "SELECT * SDAHJDAKJA"
+number int 0
+boolean bool true / false
+
+
+manejo de rutas 
+ dos tipos:
+    *relativo:
+        .views/paises.py
+    *absoluto --> con base a el directorio root
+        core_tasks/notifications/views/paises.py
+
+
+
+
+
+request http
+200
+201
+
+404 not found
+
+400 error
+
+//REST API
+{
+    "json": "valor"
+}
+-->
+{
+    "json": "RESPUESTA"
+}
+
+
+//SOAP API
+<data>valor</data>
+
+SERVICIOS BASICOS AUTOGENERADOS POR ORM
+1 GET
+2 GET/ID
+3 POST
+4 POST_BULK
+5 DELETE
+6 PUT
+7 PATCH
+
+
+
