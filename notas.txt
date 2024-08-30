@@ -105,4 +105,44 @@ SERVICIOS BASICOS AUTOGENERADOS POR ORM
 7 PATCH
 
 
+// CAMPOS DE TEXTO EN POSTGRE-SQL
+*existen 3 tipos de dato para almacenar TEXTO
+    char -> character 
+        *siempre viene limitado por maximo de caracteres
+        *almacena texto y almacena un byte adicional al tamaño del texto
+        CHAR(8)
+        'Hola    ' -> 8 bytes (1 byte por caracter) -> 9 bytes 1
+        *en consulta es mas lento -> OVERHEAD
+        *en insersion es mas lento -> LLENA LOS ESPACIOS FALTANTES -> OVERHEAD
+    varchar - character varying
+        VARCHAR(8)
+        'Hola' -> 4 bytes (1 byte por caracter) -> 9 bytes 1 de la longitud actual
+        *en insersion es mas RAPIDO -> NO LLENA LOS ESPACIOS FALTANTES -> MENOR OVERHEAD
+    text
+        *igual a varchar sin el byte de el limite
+*existen 2 tipos de dato para almacenar texto formateado
+    json es un texto, pero con la diferencia de que valida una estructura json en la insercion
+        '{
+            "llave": "valor",
+            "llave2": "6541"
+        }'
+    jsonb - json binary -> datos binarios 685464ewrtg6hasdas25gfd46hgnjhgnnghjnerajkvgfhbg5641b6 -> OVERHEAD
+        *indexacion una precomputarizacion
+        '{
+            "llave": "valor"
+        }' -> de serializacion y desserializacion
+*existe un tipo de dato para almacenar cadenas de texto
+    array DE TEXTO
+        mycampo = ["valor","6541"] -> quiero 6541? mycampo[1]
+
+//OVERHEAD
+se refire a la cantidad de recursos que mi maquina va a usar para terminar una operacion
+(RAM) -> MEMORIA TEMPORAL
+(PROCESADOR)
+(DISCO)
+
+
+
+
+
 
