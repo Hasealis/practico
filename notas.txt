@@ -1,5 +1,15 @@
 
 
+la nomenclatura de django sigue las siguientes pautas
+    *los archivos y carpetas siguen las reglas snake_case (todo en minuscula y separado por guion bajo)
+    *las clases singular (class) contabilidad -> Contabilidad || cuentas contables -> CuentaContable
+    *las variables y nombres de funciones tambien siguen las reglas de snake_case
+
+
+
+
+
+
 COMO HACER MIGRACIONES DE MODEL (CHANGO) -> BASE DATOS (POSTGRE)
     1 LA APP (CARPETA EJ CORE) debe tener un archivo apps.py con su configuracion igual que el de core
     2 el archivo settings.py de main_system  debe tener dentro de la variable INSTALLED_APPS el name de la app de apps.py
@@ -96,6 +106,8 @@ request http
 <data>valor</data>
 
 SERVICIOS BASICOS AUTOGENERADOS POR ORM
+definicion: ?
+
 1 GET
 2 GET/ID
 3 POST
