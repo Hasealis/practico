@@ -17,7 +17,7 @@ class Franquicia(models.Model):
     act_esta = models.CharField(max_length=1)
 
     class Meta:
-        db_table = 'FRANQUICIA'
+        db_table = 'franquicia'
         unique_together = (('cod_empr', 'cod_fran'),)
         constraints = [
             models.CheckConstraint(check=models.Q(act_esta__in=['B', 'M', 'A']), name='fr_check_act_esta'),

@@ -74,7 +74,7 @@ class TarjetaCredito(models.Model):
     act_esta = models.CharField(max_length=1)
 
     class Meta:
-        db_table = 'TarjetaCredito'
+        db_table = 'tarjeta_credito'
         unique_together = (('cod_empr', 'cod_tacr'),)
         constraints = [
             models.UniqueConstraint(fields=['cod_empr', 'cod_tacr'], name='unique_tarcr'),

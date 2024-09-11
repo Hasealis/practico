@@ -10,5 +10,5 @@ class BloqueoFecha(models.Model):
     act_esta = models.CharField(max_length=1)
 
     class Meta:
-        db_table = 'BloqueoFecha'
+        db_table = 'bloqueo_fecha'
         unique_together = ('cod_empr', 'ano_bloq', 'mes_bloq')

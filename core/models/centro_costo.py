@@ -15,7 +15,7 @@ class CentroCosto(models.Model):
     act_esta = models.CharField(max_length=1, help_text="Estado de la actividad")
 
     class Meta:
-        db_table = 'GN_CCOST'
+        db_table = 'centro_costo'
         unique_together = ('cod_empr', 'ref_ccos')
         constraints = [
             models.CheckConstraint(check=models.Q(act_inac__in=['N', 'S']), name="GNC10CCOST"),

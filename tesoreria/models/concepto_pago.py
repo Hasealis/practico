@@ -19,7 +19,7 @@ class ConceptoPago(models.Model):
     act_esta = models.CharField(max_length=1)
 
     class Meta:
-        db_table = 'CONCEPTO_PAGO'
+        db_table = 'concepto_pago'
         unique_together = (('cod_empr', 'cod_conp'),)
         constraints = [
             models.CheckConstraint(check=models.Q(cod_conp__gte=0), name='check_cod_conp'),
