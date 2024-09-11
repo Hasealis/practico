@@ -1,1 +1,1 @@
-from .grupo_inventario import GrupoInventario
+from .grupoinventario import GrupoInventario

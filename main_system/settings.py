@@ -22,6 +22,22 @@ INSTALLED_APPS = [
     'core',
     'contabilidad',
     'inventarios',
+    'documentos',
+    'cuentasporcobrar',
+    # 'cuentasporpagar',
+    # 'activosfijos',
+    # 'presupuesto',
+    # 'ordenpedido',
+    # 'ordencompra',
+    # 'ventas',
+    # 'gestionrecaudo',
+    # 'gestionventas',
+    # 'interfaces',
+    'tesoreria',
+    # 'nomina'
+    # 'transporte',
+    # 'produccion',
+    # 'pos',
 ]
 
 MIDDLEWARE = [
