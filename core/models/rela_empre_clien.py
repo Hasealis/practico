@@ -1,20 +1,6 @@
 from django.db import models
 
-class TipoImpuesto(models.Model):
-    cod_empr = models.SmallIntegerField()
-    cod_tipo = models.SmallIntegerField()
-
-    class Meta:
-        unique_together = (('cod_empr', 'cod_tipo'),)
-
-class NivelImpuesto(models.Model):
-    cod_empr = models.SmallIntegerField()
-    rmt_aniv = models.IntegerField()
-
-    class Meta:
-        unique_together = (('cod_empr', 'rmt_aniv'),)
-
-class Relaempreclien(models.Model):
+class RelaEmpreClien(models.Model):
     id_relaemprclien = models.AutoField(primary_key=True)
     cod_empr = models.SmallIntegerField()
     rmt_remc = models.IntegerField()

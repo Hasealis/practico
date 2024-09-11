@@ -1,19 +1,5 @@
 from django.db import models
 
-class TipoImpuesto(models.Model):
-    cod_empr = models.SmallIntegerField()
-    cod_tipo = models.SmallIntegerField()
-    
-    class Meta:
-        unique_together = ('cod_empr', 'cod_tipo')
-
-class NivelImpuesto(models.Model):
-    cod_empr = models.SmallIntegerField()
-    rmt_aniv = models.IntegerField()
-    
-    class Meta:
-        unique_together = ('cod_empr', 'rmt_aniv')
-
 class RelaEmpreprove(models.Model):
     id_relaemprprove = models.AutoField(primary_key=True)
     cod_empr = models.SmallIntegerField()
@@ -54,7 +40,7 @@ class RelaEmpreprove(models.Model):
         constraints = [
             models.CheckConstraint(check=models.Q(man_impu__in=['N', 'S']), name='check_man_impu'),
             models.CheckConstraint(check=models.Q(man_cont__in=['N', 'S']), name='check_man_cont'),
-            models.CheckConstraint(check=models.Q(act_esta__in=['M', 'A']), name='check_act_esta'),
+            models.CheckConstraint(check=models.Q(act_esta__in=['M', 'A']), name='re_check_act_esta'),
             models.CheckConstraint(check=models.Q(cod_niv1__gte=0), name='check_cod_niv1'),
             models.CheckConstraint(check=models.Q(cod_niv2__gte=0), name='check_cod_niv2'),
             models.CheckConstraint(check=models.Q(cod_niv3__gte=0), name='check_cod_niv3'),

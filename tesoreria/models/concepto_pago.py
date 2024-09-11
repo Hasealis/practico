@@ -24,5 +24,5 @@ class ConceptoPago(models.Model):
         constraints = [
             models.CheckConstraint(check=models.Q(cod_conp__gte=0), name='check_cod_conp'),
             models.CheckConstraint(check=models.Q(est_acti__in=['I', 'A']), name='check_est_acti'),
-            models.CheckConstraint(check=models.Q(act_esta__in=['B', 'M', 'A']), name='check_act_esta'),
+            models.CheckConstraint(check=models.Q(act_esta__in=['B', 'M', 'A']), name='cp_check_act_esta'),
         ]

@@ -1,29 +1,101 @@
-class cuenta_bancaria(models.Model):
+from django.db import models
+
+class CuentaBancaria(models.Model):
     cod_empr = models.SmallIntegerField()
-    cod_banc = models.ForeignKey(banco, on_delete=models.CASCADE, to_field='cod_banc', related_name='cuentas')
-    cod_sban = models.ForeignKey(SUCURSAL_BANCO, on_delete=models.CASCADE, to_field='cod_sban', related_name='cuentas')
-    cod_cueb = models.DecimalField(max_digits=18, decimal_places=0)
-    cod_mone = models.ForeignKey(MONEDA, on_delete=models.CASCADE, to_field='cod_mone', related_name='cuentas')
-    des_cueb = models.CharField(max_length=60)
-    tip_cuen = models.CharField(max_length=1)
-    cue_naci = models.CharField(max_length=1)
+    cod_banc = models.ForeignKey(
+        'tesoreria.Banco',
+        on_delete=models.CASCADE,
+        related_name='cuentas'
+    )
+    cod_sban = models.ForeignKey(
+        'tesoreria.SucursalBanco',
+        on_delete=models.CASCADE,
+        to_field='cod_sban',
+        related_name='cuentas'
+    )
+    cod_cueb = models.DecimalField(
+        max_digits=18,
+        decimal_places=0
+    )
+    cod_mone = models.ForeignKey(
+        'core.Moneda',
+        on_delete=models.CASCADE,
+        to_field='cod_mone',
+        related_name='cuentas'
+    )
+    des_cueb = models.CharField(
+        max_length=60
+    )
+    tip_cuen = models.CharField(
+        max_length=1
+    )
+    cue_naci = models.CharField(
+        max_length=1
+    )
     rmt_cuen = models.IntegerField()
-    man_sobr = models.CharField(max_length=1)
-    cup_sobr = models.DecimalField(max_digits=28, decimal_places=6)
-    act_inac = models.CharField(max_length=1)
-    res_cuen = models.CharField(max_length=1)
-    tip_caja = models.CharField(max_length=1)
-    mas_ctab = models.CharField(max_length=1)
-    cod_terc = models.ForeignKey(TERCERO, on_delete=models.CASCADE, to_field='cod_terc', related_name='cuentas')
-    cod_ccos = models.ForeignKey(CENTRO_COSTO, on_delete=models.CASCADE, to_field='cod_ccos', related_name='cuentas')
-    cod_refe = models.ForeignKey(REFERENCIADO, on_delete=models.CASCADE, to_field='cod_refe', related_name='cuentas')
-    cue_sate = models.CharField(max_length=1)
-    cue_cont = models.ForeignKey(AUXILIAR_CUENT_CONT, on_delete=models.CASCADE, to_field='cue_cont', related_name='cuentas')
-    sal_cueb = models.DecimalField(max_digits=28, decimal_places=6, default=0)
-    val_pago = models.DecimalField(max_digits=28, decimal_places=6, default=0)
-    act_usua = models.CharField(max_length=8)
-    act_hora = models.DateTimeField()
-    act_esta = models.CharField(max_length=1)
+    man_sobr = models.CharField(
+        max_length=1
+    )
+    cup_sobr = models.DecimalField(
+        max_digits=28,
+        decimal_places=6
+    )
+    act_inac = models.CharField(
+        max_length=1
+    )
+    res_cuen = models.CharField(
+        max_length=1
+    )
+    tip_caja = models.CharField(
+        max_length=1
+    )
+    mas_ctab = models.CharField(
+        max_length=1
+    )
+    cod_terc = models.ForeignKey(
+        'core.Tercero',
+        on_delete=models.CASCADE,
+        to_field='cod_terc',
+        related_name='cuentas'
+    )
+    cod_ccos = models.ForeignKey(
+        'core.CentroCosto',
+        on_delete=models.CASCADE,
+        to_field='cod_ccos',
+        related_name='cuentas'
+    )
+    cod_refe = models.ForeignKey(
+        'core.Referenciado',
+        on_delete=models.CASCADE,
+        to_field='cod_refe',
+        related_name='cuentas'
+    )
+    cue_sate = models.CharField(
+        max_length=1)
+    # cue_cont = models.ForeignKey(
+    #     'core.AuxiliarCuentaContable',
+    #     on_delete=models.CASCADE,
+    #     to_field='cue_cont',
+    #     related_name='cuentas'
+    # )
+    sal_cueb = models.DecimalField(
+        max_digits=28, 
+        decimal_places=6,
+        default=0
+    )
+    val_pago = models.DecimalField(
+        max_digits=28,
+        decimal_places=6,
+        default=0
+    )
+    act_usua = models.CharField(
+        max_length=8
+    )
+    act_hora = models.DateTimeField(
+
+    )
+    act_esta = models.CharField(
+        max_length=1)
 
     class Meta:
         constraints = [

@@ -1,16 +1,21 @@
 from django.db import models
 
 class Ciudad(models.Model):
-    cod_pais = models.SmallIntegerField(
-        help_text="Código del país"
+    cod_pais = models.ForeignKey(
+        'core.Pais',
+        on_delete=models.CASCADE,
+        db_column='cod_pais'
     )
-    
-    cod_dpto = models.SmallIntegerField(
-        help_text="Código del departamento"
+    #PONER RELACION A TABLA DE DEPARTAMENTO
+    cod_dpto = models.IntegerField(
+        # Departamento,
+        # on_delete=models.CASCADE,
+        db_column='cod_dpto'
     )
-    
-    cod_mpio = models.SmallIntegerField(
-        help_text="Código del municipio"
+    cod_mpio = models.ForeignKey(
+        'core.Ciudad',
+        on_delete=models.CASCADE,
+        db_column='cod_mpio'
     )
     
     nom_mpio = models.CharField(
@@ -74,10 +79,3 @@ class Ciudad(models.Model):
     
     def __str__(self):
         return self.nom_mpio if self.nom_mpio else f"Municipio {self.cod_mpio}"
-
-class Pais(models.Model):
-    cod_pais = models.SmallIntegerField(primary_key=True)
-    # Otros campos de la tabla pais según sea necesario
-
-    class Meta:
-        db_table = 'pais'

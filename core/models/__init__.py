@@ -2,7 +2,7 @@ from .tercero import Tercero
 from .acti_economica import ActividadEconomica
 from .caja_compensacion import CajaCompensacion
 from .calificacion import Calificacion
-from .arbol_impuesto import arbol_impuesto
+from .arbol_impuesto import ArbolImpuesto
 from .bloqueo_fecha import BloqueoFecha
 from .centro_costo import CentroCosto
 from .ciudad import Ciudad
@@ -10,10 +10,10 @@ from .impuesto import Impuesto
 from .moneda import Moneda
 from .nivel_impuesto import NivelImpuesto
 from .pais import Pais
-from .punto_venta import punto_venta
-from .referenciado import referenciado
+from .punto_venta import PuntoVenta
+from .referenciado import Referenciado
 from .relacion_nivel import RelacionNivel
-from .rela_empre_clien import Relaempreclien
+from .rela_empre_clien import RelaEmpreClien
 from .rela_empreprove import RelaEmpreprove
 from .tipoempresa import TipoEmpresa
 from .zona import Zona

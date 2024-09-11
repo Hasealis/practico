@@ -1,9 +1,11 @@
 from django.db import models
 
 class CentroCosto(models.Model):
-    id_ccos = models.AutoField(primary_key=True)
+    cod_ccos = models.AutoField(primary_key=True)
     cod_empr = models.SmallIntegerField(help_text="Código de la empresa")
-    cod_ccos = models.SmallIntegerField(help_text="Código del centro de costo")
+    ref_ccos = models.CharField(
+        # max_length=10
+    )
     nom_ccos = models.CharField(max_length=60, help_text="Nombre del centro de costo")
     dir_ccos = models.CharField(max_length=60, help_text="Dirección del centro de costo")
     tel_ccos = models.CharField(max_length=30, help_text="Teléfono del centro de costo")

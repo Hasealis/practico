@@ -1,27 +1,6 @@
 from django.db import models
 
-class ciudad(models.Model):
-    cod_pais = models.SmallIntegerField()
-    cod_dpto = models.SmallIntegerField()
-    cod_mpio = models.SmallIntegerField()
-
-    class Meta:
-        db_table = 'ciudad'
-        unique_together = ('cod_pais', 'cod_dpto', 'cod_mpio')
-
-class Tercero(models.Model):
-    cod_empr = models.SmallIntegerField()
-    cod_terc = models.DecimalField(max_digits=13, decimal_places=0)
-
-    class Meta:
-        db_table = 'tercero'
-        unique_together = ('cod_empr', 'cod_terc')
-
-class Nivel(models.Model):
-    cod_empr = models.SmallIntegerField()
-
-
-class Pvta(models.Model):
+class PuntoVenta(models.Model):
 
     cod_empr = models.SmallIntegerField()   
     id_pvta = models.DecimalField(max_digits=30, decimal_places=0, primary_key=True) 

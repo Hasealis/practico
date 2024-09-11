@@ -1,10 +1,15 @@
 from django.db import models
 
-class banco(models.Model):
+class Banco(models.Model):
+    cod_banc = models.BigIntegerField(
+        primary_key= True
+    )
     cod_empr = models.SmallIntegerField()
-    cod_banc = models.SmallIntegerField()
     cod_comp = models.SmallIntegerField()
-    nit_banc = models.ForeignKey(tercero, on_delete=models.CASCADE)  # Relación con la tabla Tercero
+    nit_banc = models.ForeignKey(
+        'core.Tercero',
+        on_delete=models.CASCADE
+    )
     nom_banc = models.CharField(max_length=40)
     tip_banc = models.CharField(max_length=1)
     por_cotr = models.CharField(max_length=1)

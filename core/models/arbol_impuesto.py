@@ -1,6 +1,6 @@
 from django.db import models
 
-class arbol_impuesto(models.Model):
+class ArbolImpuesto(models.Model):
     cod_empr = models.SmallIntegerField()
     cod_arbo = models.SmallIntegerField()
     ide_arbo = models.CharField(max_length=2)
@@ -18,5 +18,5 @@ class arbol_impuesto(models.Model):
             models.CheckConstraint(check=models.Q(cod_arbo__gte=0), name='check_cod_arbo'),
             models.CheckConstraint(check=models.Q(can_nive__gte=0), name='check_can_nive'),
             models.CheckConstraint(check=models.Q(cap_fija__in=['N', 'S']), name='check_cap_fija'),
-            models.CheckConstraint(check=models.Q(act_esta__in=['M', 'A']), name='check_act_esta'),
+            models.CheckConstraint(check=models.Q(act_esta__in=['M', 'A']), name='ai_check_act_esta'),
         ]

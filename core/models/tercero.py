@@ -1,7 +1,9 @@
 from django.db import models
 
 class Tercero(models.Model):
-    id = models.AutoField(primary_key=True)
+    cod_terc = models.BigIntegerField(
+        primary_key=True
+    )
     
     # Información del documento
     tipo_de_documento = models.CharField(max_length=1)

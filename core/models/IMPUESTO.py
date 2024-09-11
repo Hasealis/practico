@@ -40,7 +40,7 @@ class Impuesto(models.Model):
             models.CheckConstraint(check=models.Q(val_base__gte=0), name='check_val_base_non_negative'),
             models.CheckConstraint(check=models.Q(tip_impu__in=['CE', 'TI', 'RT', 'RV', 'RC', 'IV', 'OT']), name='check_tip_impu_valid'),
             models.CheckConstraint(check=models.Q(res_ciud__in=['S', 'N']), name='check_res_ciud_valid'),
-            models.CheckConstraint(check=models.Q(act_esta__in=['A', 'M']), name='check_act_esta_valid'),
+            models.CheckConstraint(check=models.Q(act_esta__in=['A', 'M']), name='im_check_act_esta_valid'),
             models.CheckConstraint(check=models.Q(tip_fact__in=['V', 'P', 'U', 'R']), name='check_tip_fact_valid'),
             models.CheckConstraint(check=models.Q(val_impu__gte=0), name='check_val_impu_non_negative')
         ]
