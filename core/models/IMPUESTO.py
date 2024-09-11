@@ -8,7 +8,7 @@ class AuxiliarCuentaCont(models.Model):
     cue_cont = models.IntegerField(primary_key=True)
     # Define otros campos necesarios para la tabla auxiliar_cuent_cont
 
-class IMPUESTO(models.Model):
+class Impuesto(models.Model):
     id_impuesto = models.AutoField(primary_key=True)  # Campo autoincrementable primario
     cod_empr = models.SmallIntegerField()
     cod_impu = models.SmallIntegerField()

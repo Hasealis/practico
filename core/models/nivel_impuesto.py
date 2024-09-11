@@ -20,5 +20,7 @@ class NivelImpuesto(models.Model):
             models.CheckConstraint(check=models.Q(act_esta__in=['M', 'A']), name='act_esta_valid'),
         ]
         indexes = [
-            models.Index(fields=['cod_empr', 'cod_arbo', 'ide_arbo', 'num_nive', 'cod_nive']),
+            models.Index(fields=['cod_empr',
+                                #   'cod_arbo',
+                                  'id_arbol', 'num_nive', 'cod_nive']),
         ]
